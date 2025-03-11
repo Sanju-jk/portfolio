@@ -21,7 +21,7 @@ const About = () => {
             {/* Download Resume and Contact Button */}
             <div className="absolute top-6 right-6">
                 <a
-                    href="/resume.png"
+                    href="https://sanju-jk.github.io/portfolio/Sanju_resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-6 py-3 rounded-md shadow-md transition-all duration-300 ${theme === 'dark'

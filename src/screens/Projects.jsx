@@ -27,7 +27,42 @@ const Projects = () => {
                 { name: 'Express.js', iconClass: 'fas fa-server', color: '#666666' },
                 { name: 'MongoDB', iconClass: 'fas fa-database', color: '#4DB33D' }
             ],
-            github: 'https://github.com/sanju-jk/food-app'
+            github: 'https://github.com/sanju-jk/food-app',
+            liveDemo: 'https://foodify-beta-six.vercel.app/'
+        },
+        {
+            title: 'StreamBerry',
+            description: 'A Netflix-like streaming web app built with React and TMDB API with a visually rich interface.',
+            features: [
+                'TMDB API Integration',
+                'Dynamic Modal with Details and Trailers',
+                'Search Functionality',
+                'Responsive Carousel Layout'
+            ],
+            technologies: [
+                { name: 'React', iconClass: 'fab fa-react', color: '#61DBFB' },
+                { name: 'Tailwind CSS', iconClass: 'fas fa-paint-brush', color: '#38B2AC' },
+                { name: 'TMDB API', iconClass: 'fas fa-film', color: '#01B4E4' }
+            ],
+            github: 'https://github.com/Sanju-jk/netflix-clone',
+            liveDemo: 'https://netflix-clone-rouge-nu.vercel.app/'
+        },
+        {
+            title: 'Pokemon Explorer',
+            description: 'A Pokémon-themed app built using Next.js and the PokéAPI. Allows users to explore a variety of Pokémon with detailed information and dynamic routing for each Pokémon profile.',
+            features: [
+                'Next.js Server-side Rendering',
+                'PokéAPI Integration',
+                'Dynamic Routing',
+                'Responsive Grid Display',
+                'Clean, Interactive UI'
+            ],
+            technologies: [
+                { name: 'Next.js', iconClass: 'fab fa-react', color: '#000000' },
+                { name: 'PokéAPI', iconClass: 'fas fa-dragon', color: '#FF0000' }
+            ],
+            github: 'https://github.com/Sanju-jk/pokemon-explorer',
+            liveDemo: 'https://pokemon-explorer-mauve.vercel.app/'
         },
         {
             title: 'Portfolio Website',
@@ -39,6 +74,7 @@ const Projects = () => {
             github: 'https://github.com/sanju-jk/portfolio'
         }
     ];
+
 
     const handlePrevious = () => {
         setAnimateDirection('left');
@@ -80,7 +116,7 @@ const Projects = () => {
                     </button>
 
                     {/* Project Card */}
-                    <div className={`w-full max-w-lg mx-auto px-4 overflow-hidden relative ${theme === 'light' ? 'bg-gray-200' : 'bg-gray-800'} text-gray-300 shadow-md`} style={{ height: '450px' }}>
+                    <div className={`w-full max-w-lg mx-auto px-4 overflow-hidden relative ${theme === 'light' ? 'bg-gray-200' : 'bg-gray-800'} text-gray-300 shadow-md`}>
                         <div
                             className={`flex transition-transform duration-300  ${animateDirection === 'left' ? 'animate-fade-left' : animateDirection === 'right' ? 'animate-fade-right' : ''}`}
                         >
@@ -134,19 +170,35 @@ const Projects = () => {
                                         </ul>
 
                                         {/* GitHub Link */}
-                                        {project.github && (
-                                            <div className="mt-10">
-                                                <a
-                                                    href={project.github}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className={` hover:underline hover:text-teal-200 flex items-center justify-center ${theme === 'light' ? 'text-blue-600' : 'text-blue-400'}`}
-                                                >
-                                                    <i className="fab fa-github mr-2"></i>
-                                                    View GitHub Repo
-                                                </a>
-                                            </div>
-                                        )}
+                                        <div className='flex justify-center items-center gap-5'>
+                                            {project.github && (
+                                                <div className="mt-10">
+                                                    <a
+                                                        href={project.github}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={` hover:underline hover:text-teal-200 flex items-center justify-center ${theme === 'light' ? 'text-blue-600' : 'text-blue-400'}`}
+                                                    >
+                                                        <i className="fab fa-github mr-2"></i>
+                                                        GitHub
+                                                    </a>
+                                                </div>
+                                            )}
+                                            {/* Live demo Link */}
+                                            {project.liveDemo && (
+                                                <div className="mt-10">
+                                                    <a
+                                                        href={project.liveDemo}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={` hover:underline hover:text-teal-200 flex items-center justify-center ${theme === 'light' ? 'text-blue-600' : 'text-blue-400'}`}
+                                                    >
+                                                        <i className="fas fa-tv mr-2"></i>
+                                                        Live Demo
+                                                    </a>
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -169,8 +221,8 @@ const Projects = () => {
                         <div
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? (theme === 'light' ? 'bg-blue-600 w-6' : 'bg-blue-400 w-6')  // Active dot color
-                                    : (theme === 'light' ? 'bg-gray-400' : 'bg-gray-600')  // Inactive dot color
+                                ? (theme === 'light' ? 'bg-blue-600 w-6' : 'bg-blue-400 w-6')  // Active dot color
+                                : (theme === 'light' ? 'bg-gray-400' : 'bg-gray-600')  // Inactive dot color
                                 }`} />
                     ))}
                 </div>
